@@ -1,3 +1,5 @@
+include(":shared")
+include(":networking")
 include(":base")
 include(":main")
 include(":di")

@@ -1,7 +1,9 @@
 package com.rviannaoliveira.playgroundmvvm.di
 
 import android.app.Application
+import com.rviannaoliveira.base.di.BaseModule
 import com.rviannaoliveira.di.ViewModelFactoryModule
+import com.rviannaoliveira.networking.di.NetworkModule
 import com.rviannaoliveira.playgroundmvvm.CustomApplication
 import dagger.BindsInstance
 import dagger.Component
@@ -16,7 +18,9 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         ActivityBuilderModule::class,
         ViewModelFactoryModule::class,
-        AppModule::class
+        AppModule::class,
+        NetworkModule::class,
+        BaseModule::class
     ]
 )
 interface AppComponent : AndroidInjector<DaggerApplication> {

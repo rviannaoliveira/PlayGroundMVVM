@@ -6,9 +6,6 @@ plugins {
 }
 
 android {
-    dataBinding {
-        isEnabled = true
-    }
     compileSdkVersion(Versions.compileSdkVersion)
     buildToolsVersion(Versions.buildToolsVersion)
 
@@ -26,16 +23,6 @@ android {
 }
 
 dependencies {
-    implementation(project(Depends.Module.di))
-    implementation(project(Depends.Module.base))
-    implementation(project(Depends.Module.networking))
-    implementation(project(Depends.Module.shared))
-
-    Depends.daggerArray.forEach { implementation(it) }
-    Depends.processorDaggerArray.forEach { kapt(it) }
-    Depends.retrofitArray.forEach { implementation(it) }
-    Depends.rxArray.forEach { implementation(it) }
-
     Depends.kotlinArray.forEach { implementation(it) }
     Depends.supportArray.forEach { implementation(it) }
     Depends.unitTestArray.forEach { testImplementation(it) }

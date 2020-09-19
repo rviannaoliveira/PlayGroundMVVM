@@ -5,6 +5,8 @@ object Depends {
         const val di = ":di"
         const val base = ":base"
         const val main = ":main"
+        const val networking = ":networking"
+        const val shared = ":shared"
     }
 
     object Android {
