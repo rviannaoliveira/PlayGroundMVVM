@@ -1,13 +1,13 @@
-version: 2.1
+name: CI
 
-orbs:
- android: circleci/android@0.2.1
+on: [push]
 
 jobs:
   build:
-    executor: android/android
-        
+
+    runs-on: ubuntu-latest
+
     steps:
-      - checkout
-      - run:
-          command: ./gradlew testDebugUnitTest assembleDebug
+      - uses: actions/checkout@v2
+      - name: Run basic tests
+        run: ./gradlew clean testDebugUnitTest
