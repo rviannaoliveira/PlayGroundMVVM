@@ -40,6 +40,6 @@ class MainRepositoryImpl @Inject constructor(
     }
 
     companion object {
-        private const val KEY_LIST = "KEY_LIST"
+        internal const val KEY_LIST = "KEY_LIST"
     }
 }
