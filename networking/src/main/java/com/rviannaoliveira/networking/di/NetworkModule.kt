@@ -1,6 +1,5 @@
 package com.rviannaoliveira.networking.di
 
-import android.annotation.SuppressLint
 import android.app.Application
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.rviannaoliveira.networking.BuildConfig

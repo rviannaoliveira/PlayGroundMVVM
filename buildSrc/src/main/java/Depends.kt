@@ -42,10 +42,12 @@ object Depends {
     object AndroidTest {
         const val runner = "androidx.test:runner:${Versions.test_runner_version}"
         const val espresso = "androidx.test.espresso:espresso-core:${Versions.test_espresso_version}"
+        const val espressoContrib = "com.android.support.test.espresso:espresso-contrib:${Versions.test_espresso_version}"
         const val rules = "androidx.test:rules:${Versions.test_rules_version}"
         const val hamcrest = "org.hamcrest:hamcrest-library:${Versions.test_hamcrest}"
         const val uiautomator = "androidx.test.uiautomator:uiautomator:${Versions.test_uiautomator}"
         const val ext = "androidx.test.ext:junit:${Versions.test_ext}"
+        const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.mockWebServer}"
     }
 
     object Support {
@@ -54,23 +56,6 @@ object Depends {
         const val cardView = "androidx.cardview:cardview:${Versions.cardview_version}"
         const val design = "com.google.android.material:material:${Versions.material_version}"
         const val animation = "androidx.dynamicanimation:dynamicanimation:1.0.0"
-    }
-
-    object KtxExtentions {
-        const val activity = "androidx.activity:activity-ktx:${Versions.activity_ktx_version}"
-        const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment_ktx_version}"
-    }
-
-    object Jacoco {
-        const val jacoco = "org.jacoco:org.jacoco.core:${Versions.jacoco_version}"
-    }
-
-    object Fabric {
-        const val fabric = "io.fabric.tools:gradle:${Versions.fabric_version}"
-    }
-
-    object MultiDex {
-        const val multidex = "androidx.multidex:multidex:${Versions.multidex_version}"
     }
 
     object Dagger {
@@ -169,6 +154,9 @@ object Depends {
             AndroidTest.hamcrest,
             AndroidTest.rules,
             AndroidTest.uiautomator,
-            AndroidTest.runner
+            AndroidTest.runner,
+            AndroidTest.espressoContrib,
+            AndroidTest.mockWebServer,
+            AndroidTest.ext
     )
 }
