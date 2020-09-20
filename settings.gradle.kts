@@ -1,3 +1,4 @@
+include(":cache")
 include(":components")
 include(":shared")
 include(":networking")

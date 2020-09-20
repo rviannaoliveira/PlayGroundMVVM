@@ -8,6 +8,7 @@ object Depends {
         const val networking = ":networking"
         const val shared = ":shared"
         const val components = ":components"
+        const val cache = ":cache"
     }
 
     object Android {

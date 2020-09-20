@@ -2,7 +2,10 @@ package com.rviannaoliveira.main.presentation
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.NonNull
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.rviannaoliveira.base.BaseActivity
 import com.rviannaoliveira.main.R
 import com.rviannaoliveira.main.databinding.ActivityMainBinding
@@ -27,9 +30,26 @@ class MainActivity : BaseActivity() {
 
     private fun setupRecyclerView() {
         binding.recyclerView.adapter =
-            ItemListAdapter{
-                Toast.makeText(this,it, Toast.LENGTH_SHORT).show()
+            ItemListAdapter {
+                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
             }
+
+        binding.recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(
+                @NonNull recyclerView: RecyclerView,
+                dx: Int,
+                dy: Int
+            ) {
+                super.onScrolled(recyclerView, dx, dy)
+                val linearLayoutManager = recyclerView.layoutManager
+                if (linearLayoutManager is LinearLayoutManager){
+
+                    binding.recyclerView.post{
+                        vm.onLastItemVisible(linearLayoutManager.findLastVisibleItemPosition())
+                    }
+                }
+            }
+        })
     }
 
     private fun setupObservers() {
@@ -44,6 +64,7 @@ class MainActivity : BaseActivity() {
                 }
             }
         })
+
 
         vm.itemsLiveData.observe(this, SafeObserver {
             (binding.recyclerView.adapter as ItemListAdapter).list = it

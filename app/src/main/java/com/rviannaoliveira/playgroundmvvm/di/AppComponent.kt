@@ -2,6 +2,7 @@ package com.rviannaoliveira.playgroundmvvm.di
 
 import android.app.Application
 import com.rviannaoliveira.base.di.BaseModule
+import com.rviannaoliveira.cache.CacheModule
 import com.rviannaoliveira.di.ViewModelFactoryModule
 import com.rviannaoliveira.networking.di.NetworkModule
 import com.rviannaoliveira.playgroundmvvm.CustomApplication
@@ -20,7 +21,8 @@ import javax.inject.Singleton
         ViewModelFactoryModule::class,
         AppModule::class,
         NetworkModule::class,
-        BaseModule::class
+        BaseModule::class,
+        CacheModule::class
     ]
 )
 interface AppComponent : AndroidInjector<DaggerApplication> {

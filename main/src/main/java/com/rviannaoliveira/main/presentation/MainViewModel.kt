@@ -1,6 +1,5 @@
 package com.rviannaoliveira.main.presentation
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.rviannaoliveira.base.BaseViewModel
@@ -47,14 +46,19 @@ class MainViewModel @Inject constructor(
             .subscribe({ list ->
                 _stateLiveData.value = ItemListState.ShowSuccessView
                 _itemsLiveData.value = list
-                list.forEach {
-                    Log.d(">>>>>>>", it.toString())
-                }
             }, {
                 _stateLiveData.value = ItemListState.ShowErrorView
                 reporter.logError(it)
             })
         )
+    }
+
+    fun onLastItemVisible(lastItemVisible: Int) {
+        itemsLiveData.value?.size
+            ?.takeIf { lastItemVisible == it - 1 }
+            ?.run {
+                _itemsLiveData.value = interactor.getItemOffset(_itemsLiveData.value)
+            }
     }
 
     fun retry() {

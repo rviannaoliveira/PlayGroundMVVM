@@ -31,6 +31,7 @@ dependencies {
     implementation(project(Depends.Module.networking))
     implementation(project(Depends.Module.shared))
     implementation(project(Depends.Module.components))
+    implementation(project(Depends.Module.cache))
 
     Depends.daggerArray.forEach { implementation(it) }
     Depends.processorDaggerArray.forEach { kapt(it) }
