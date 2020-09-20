@@ -47,7 +47,7 @@ class DetailUiModelTest {
 
     @Test
     fun `get detail item when the item is sell`() {
-        uiModel.getDetailItem(item)
+        uiModel.getDetailItem(item2)
 
         verifyOrder {
             resources.getString(R.string.title_detail)
