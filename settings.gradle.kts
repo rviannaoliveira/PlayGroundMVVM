@@ -1,3 +1,4 @@
+include(":detail")
 include(":cache")
 include(":components")
 include(":shared")

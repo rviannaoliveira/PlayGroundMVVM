@@ -1,8 +1,8 @@
 package com.rviannaoliveira.main.domain
 
 import com.rviannaoliveira.main.data.MainRepository
-import com.rviannaoliveira.main.domain.mapper.toListItems
-import com.rviannaoliveira.main.domain.model.Item
+import com.rviannaoliveira.networking.domain.mapper.toListItems
+import com.rviannaoliveira.networking.domain.model.Item
 import io.reactivex.Single
 import javax.inject.Inject
 

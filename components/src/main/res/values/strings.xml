@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="empty">"n/a"</string>
     <string name="parking_space">Vagas:</string>
     <string name="area">Area:</string>
 </resources>

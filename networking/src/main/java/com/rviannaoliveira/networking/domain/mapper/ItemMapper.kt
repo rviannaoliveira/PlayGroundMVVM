@@ -1,27 +1,23 @@
-package com.rviannaoliveira.main.domain.mapper
+package com.rviannaoliveira.networking.domain.mapper
 
-import android.content.res.Resources
-import com.rviannaoliveira.main.R
 import com.rviannaoliveira.main.data.model.*
-import com.rviannaoliveira.main.domain.model.*
-import java.text.NumberFormat
-import java.util.*
+import com.rviannaoliveira.networking.domain.model.*
 
-internal fun List<ItemResponse>.toListItems(): List<Item> {
+fun List<ItemResponse>.toListItems(): List<Item> {
     return this.map {
         Item(
-            usableAreas = it.usableAreas,
+            usableAreas = it.usableAreas.toString(),
             listingType = it.listingType,
             createdAt = it.createdAt,
             listingStatus = it.listingStatus,
             id = it.id,
-            parkingSpaces = it.parkingSpaces ?: 0,
+            parkingSpaces = it.parkingSpaces?.toString() ?: 0.toString(),
             updatedAt = it.updatedAt,
             owner = it.owner,
             images = it.images,
             address = it.address.toAddress(),
-            bathrooms = it.bathrooms,
-            bedrooms = it.bedrooms,
+            bathrooms = it.bathrooms.toString(),
+            bedrooms = it.bedrooms.toString(),
             pricingInfos = it.pricingInfos.toPricingInfos()
         )
     }

@@ -12,4 +12,16 @@
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="backgroundSplash">@android:color/white</item>
     </style>
+
+    <style name="TextAppearance.Medium" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textSize">@dimen/font_size_xxxs</item>
+    </style>
+
+    <style name="TextAppearance.Large" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif-regular</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textSize">@dimen/font_size_sm</item>
+    </style>
 </resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_detail">Apartamento para %1$s</string>
+    <string name="rental">Aluguel</string>
+    <string name="sell">Venda</string>
+    <string name="bedrooms">quartos</string>
+    <string name="bathrooms">banheiros</string>
+    <string name="usableAreas">m2</string>
+    <string name="parkingSpaces">vagas</string>
+    <string name="price">Valor:</string>
+    <string name="look_location">Veja a localização</string>
+</resources>

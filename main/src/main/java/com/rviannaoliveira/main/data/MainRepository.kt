@@ -3,7 +3,7 @@ package com.rviannaoliveira.main.data
 import com.rviannaoliveira.cache.ICache
 import com.rviannaoliveira.main.data.model.ItemResponse
 import com.rviannaoliveira.main.data.service.MainService
-import com.rviannaoliveira.main.domain.model.Item
+import com.rviannaoliveira.networking.domain.model.Item
 import io.reactivex.Single
 import javax.inject.Inject
 

@@ -9,9 +9,8 @@ import android.view.LayoutInflater
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.cardview.widget.CardView
+import com.rviannaoliveira.shared.extensions.getPriceFormat
 import kotlinx.android.synthetic.main.card_image.view.*
-import java.text.NumberFormat
-import java.util.*
 
 class CustomCardView @JvmOverloads constructor(
     context: Context,
@@ -101,13 +100,6 @@ class CustomCardView @JvmOverloads constructor(
             card_image.setImageBitmap(value)
         }
 }
-
-private fun String?.getPriceFormat(resources: Resources): String? {
-    val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale.getDefault())
-    return this?.let { format.format(Integer.valueOf(it)) }
-        ?: resources.getString(R.string.empty)
-}
-
 private fun String?.getArea(resources: Resources): String? {
     return this?.let { "${resources.getString(R.string.area)} $it m" }
         ?: resources.getString(R.string.empty)

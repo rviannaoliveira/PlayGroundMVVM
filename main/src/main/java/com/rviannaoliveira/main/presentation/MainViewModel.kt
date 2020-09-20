@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.rviannaoliveira.base.BaseViewModel
 import com.rviannaoliveira.base.Reporter
 import com.rviannaoliveira.main.domain.MainInteractor
-import com.rviannaoliveira.main.domain.model.Item
+import com.rviannaoliveira.networking.domain.model.Item
 import com.rviannaoliveira.networking.di.IOScheduler
 import com.rviannaoliveira.networking.di.MainScheduler
 import io.reactivex.Scheduler
@@ -16,6 +16,7 @@ sealed class ItemListState(val showLoading: Boolean) {
     object ShowErrorView : ItemListState(false)
     object ShowLoading : ItemListState(true)
     object RemoveLoading : ItemListState(false)
+    data class OpenDetail(val id : String) : ItemListState(false)
 }
 
 class MainViewModel @Inject constructor(
@@ -59,6 +60,10 @@ class MainViewModel @Inject constructor(
             ?.run {
                 _itemsLiveData.value = interactor.getItemOffset(_itemsLiveData.value)
             }
+    }
+
+    fun openDetail(id: String) {
+        _stateLiveData.value = ItemListState.OpenDetail(id)
     }
 
     fun retry() {

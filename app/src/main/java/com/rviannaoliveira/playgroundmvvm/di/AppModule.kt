@@ -6,6 +6,7 @@ import android.content.res.Resources
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
 abstract class AppModule {
@@ -15,6 +16,8 @@ abstract class AppModule {
     @Module
     companion object{
         @Provides
+        @JvmStatic
+        @Singleton
         fun provideAppResources(application: Application): Resources = application.resources
     }
 }

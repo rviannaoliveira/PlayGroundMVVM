@@ -1,20 +1,35 @@
-package com.rviannaoliveira.main.domain.model
+package com.rviannaoliveira.networking.domain.model
 
 data class Item (
-    val usableAreas : Int,
+    val usableAreas : String,
     val listingType : String,
     val createdAt : String,
     val listingStatus : String,
     val id : String,
-    val parkingSpaces : Int,
+    val parkingSpaces : String,
     val updatedAt : String,
     val owner : Boolean,
     val images : List<String>,
     val address : Address,
-    val bathrooms : Int,
-    val bedrooms : Int,
+    val bathrooms : String,
+    val bedrooms : String,
     val pricingInfos : PricingInfos
-)
+){
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Item
+
+        if (id != other.id) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return id.hashCode()
+    }
+}
 
 data class Address (
     val city : String,

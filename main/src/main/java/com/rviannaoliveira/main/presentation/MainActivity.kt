@@ -1,12 +1,12 @@
 package com.rviannaoliveira.main.presentation
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rviannaoliveira.base.BaseActivity
+import com.rviannaoliveira.detail.presentation.DetailActivity
 import com.rviannaoliveira.main.R
 import com.rviannaoliveira.main.databinding.ActivityMainBinding
 import com.rviannaoliveira.main.presentation.adapter.ItemListAdapter
@@ -22,7 +22,7 @@ class MainActivity : BaseActivity() {
         binding.lifecycleOwner = this
         binding.vm = vm
 
-        binding.toolbar.title = "Colocar o flavor"
+        binding.toolbar.title = getString(R.string.app_name)
         setSupportActionBar(binding.toolbar)
         setupRecyclerView()
         setupObservers()
@@ -31,7 +31,7 @@ class MainActivity : BaseActivity() {
     private fun setupRecyclerView() {
         binding.recyclerView.adapter =
             ItemListAdapter {
-                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+                vm.openDetail(it)
             }
 
         binding.recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -42,9 +42,9 @@ class MainActivity : BaseActivity() {
             ) {
                 super.onScrolled(recyclerView, dx, dy)
                 val linearLayoutManager = recyclerView.layoutManager
-                if (linearLayoutManager is LinearLayoutManager){
+                if (linearLayoutManager is LinearLayoutManager) {
 
-                    binding.recyclerView.post{
+                    binding.recyclerView.post {
                         vm.onLastItemVisible(linearLayoutManager.findLastVisibleItemPosition())
                     }
                 }
@@ -56,11 +56,14 @@ class MainActivity : BaseActivity() {
         vm.stateLiveData.observe(this, SafeObserver { state ->
             @Suppress("NON_EXHAUSTIVE_WHEN")
             when (state) {
-                ItemListState.ShowSuccessView -> {
+                is ItemListState.ShowSuccessView -> {
                     binding.viewFlipper.displayedChild = 0
                 }
-                ItemListState.ShowErrorView -> {
+                is ItemListState.ShowErrorView -> {
                     binding.viewFlipper.displayedChild = 1
+                }
+                is ItemListState.OpenDetail -> {
+                    startActivity(DetailActivity.newInstance(this, state.id))
                 }
             }
         })

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rviannaoliveira.components.CustomCardView
 import com.rviannaoliveira.main.R
-import com.rviannaoliveira.main.domain.model.Item
+import com.rviannaoliveira.networking.domain.model.Item
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 import java.lang.Exception
@@ -56,8 +56,8 @@ class ItemListAdapter(
         val item = list[position]
 
         holder.card.title = item.pricingInfos.price.toString()
-        holder.card.content = item.usableAreas.toString()
-        holder.card.subtitle = item.parkingSpaces.toString()
+        holder.card.content = item.usableAreas
+        holder.card.subtitle = item.parkingSpaces
 
         Picasso.get()
             .load(item.images.first())
