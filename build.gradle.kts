@@ -1,13 +1,5 @@
 import Depends.modules
 
-plugins {
-    id("org.jlleitschuh.gradle.ktlint") version "9.2.1"
-}
-
-subprojects {
-    apply(plugin = "org.jlleitschuh.gradle.ktlint")
-}
-
 buildscript {
     repositories {
         google()
@@ -59,7 +51,15 @@ fun Project.configureAndroid() {
             multiDexEnabled = true
         }
 
-        compileOptions {
+        lintOptions {
+            isCheckReleaseBuilds = false
+            isCheckDependencies = true
+            isCheckAllWarnings = true
+            isWarningsAsErrors = true
+            isIgnoreWarnings = true
+            isAbortOnError = false
+        }
+         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
         }
@@ -90,7 +90,23 @@ fun Project.configureAppAndroid() {
 
 fun Project.configureAndroidLibrary() {
     apply(plugin = "com.android.library")
+
+    configure<com.android.build.gradle.BaseExtension> {
+        buildTypes {
+            getByName("release") {
+                buildConfigField("String", "BASE_URL", "\"http://grupozap-code-challenge.s3-website-us-east-1.amazonaws.com/sources/\"")
+            }
+
+            getByName("debug") {
+                buildConfigField("String", "BASE_URL", "\"http://grupozap-code-challenge.s3-website-us-east-1.amazonaws.com/sources/\"")
+            }
+        }
+    }
+
 }
+
+
+
 
 tasks.register("clean").configure {
     delete("build")

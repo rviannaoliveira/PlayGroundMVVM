@@ -17,6 +17,6 @@ class DetailRepositoryImpl @Inject constructor(
         return list.find { id == it.id }!!
     }
     companion object {
-        private const val KEY_LIST = "KEY_LIST"
+        internal const val KEY_LIST = "KEY_LIST"
     }
 }

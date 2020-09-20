@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.tabs.TabLayoutMediator
 import com.rviannaoliveira.base.BaseActivity
 import com.rviannaoliveira.detail.R
 import com.rviannaoliveira.detail.databinding.ActivityDetailBinding
@@ -22,12 +24,25 @@ class DetailActivity : BaseActivity() {
 
         binding.toolbar.title = getString(R.string.app_name)
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
         setupObservers()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+            }
+        }
+        return true
     }
 
     private fun setupObservers() {
         vm.urlsLiveData.observe(this, SafeObserver {
             binding.pager.adapter = ImageAdapter(this, it)
+            TabLayoutMediator(binding.tabLayout, binding.pager) { _, _ ->
+            }.attach()
         })
 
         vm.openMapsLiveData.observe(this, SafeObserver {

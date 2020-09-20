@@ -14,7 +14,7 @@ abstract class AppModule {
     abstract fun provideContext(application: Application): Context
 
     @Module
-    companion object{
+    companion object {
         @Provides
         @JvmStatic
         @Singleton
