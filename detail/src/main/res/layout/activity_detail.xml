@@ -35,8 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:scrollbars="none"
-            app:layout_constraintTop_toBottomOf="@+id/appBar"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -47,6 +47,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/height_pager"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    app:layout_constraintBottom_toBottomOf="@+id/pager"
+                    android:background="@android:color/transparent"
+                    app:tabBackground="@drawable/tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
@@ -63,25 +74,25 @@
 
                         <TextView
                             android:id="@+id/title"
+                            style="@style/TextAppearance.Large"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@{vm.itemLiveData.title}"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            style="@style/TextAppearance.Large"
                             android:textAllCaps="true"
                             android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/description"
+                            style="@style/TextAppearance.Medium"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/margin_large"
-                            style="@style/TextAppearance.Medium"
                             android:text="@{vm.itemLiveData.description}"
-                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/title" />
 
                         <TextView
@@ -91,8 +102,8 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/margin_large"
                             android:text="@{vm.itemLiveData.price}"
-                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/description" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -104,16 +115,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_button"
-            android:text="@string/look_location"
-            android:textAllCaps="false"
             android:background="?attr/colorAccent"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="@dimen/font_size_xs"
-            android:gravity="center_vertical|center_horizontal"
-            android:onClick="@{_ -> vm.openGoogleMaps()}"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="@{_ -> vm.openGoogleMaps()}"
+            android:text="@string/look_location"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="@dimen/font_size_xs"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
