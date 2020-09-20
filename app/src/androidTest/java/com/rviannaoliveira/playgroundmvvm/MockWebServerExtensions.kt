@@ -1,6 +1,9 @@
 package com.rviannaoliveira.playgroundmvvm
+import android.content.Intent
 import android.util.Log
 import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.rule.ActivityTestRule
+import com.rviannaoliveira.main.presentation.MainActivity
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -20,8 +23,7 @@ fun MockWebServer.initMockServer() {
 val dispatcher: Dispatcher = object : Dispatcher() {
     @Throws(InterruptedException::class)
     override fun dispatch(request: RecordedRequest): MockResponse {
-        var nameFile = request.path.substringAfterLast("public/")
-            .substringBeforeLast("?")
+        val nameFile = request.path.removePrefix("/")
 
         return getMockResponseOK(nameFile)
     }
@@ -36,11 +38,10 @@ val dispatcher: Dispatcher = object : Dispatcher() {
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 fun readFileFromAssets(fileName: String): String {
     val builder = StringBuilder()
-    val completeFileName = "$fileName.json"
 
     try {
         val stream =
-            InstrumentationRegistry.getInstrumentation().targetContext.assets.open(completeFileName)
+            InstrumentationRegistry.getInstrumentation().targetContext.assets.open(fileName)
         val bReader = BufferedReader(InputStreamReader(stream, "UTF-8") as Reader?)
         var line = bReader.readLine()
 
