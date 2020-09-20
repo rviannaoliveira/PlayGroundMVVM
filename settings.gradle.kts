@@ -1,3 +1,4 @@
+include(":components")
 include(":shared")
 include(":networking")
 include(":base")

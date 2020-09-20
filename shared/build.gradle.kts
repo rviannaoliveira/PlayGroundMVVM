@@ -6,6 +6,10 @@ plugins {
 }
 
 android {
+    dataBinding {
+        isEnabled = true
+    }
+
     compileSdkVersion(Versions.compileSdkVersion)
     buildToolsVersion(Versions.buildToolsVersion)
 

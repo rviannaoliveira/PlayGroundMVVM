@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="list_error_message">Estamos com problemas para carregar os itens. \n Clique para tentar novamente</string>
+</resources>

@@ -1,7 +1,11 @@
 package com.rviannaoliveira.main.domain.mapper
 
+import android.content.res.Resources
+import com.rviannaoliveira.main.R
 import com.rviannaoliveira.main.data.model.*
 import com.rviannaoliveira.main.domain.model.*
+import java.text.NumberFormat
+import java.util.*
 
 internal fun List<ItemResponse>.toListItems(): List<Item> {
     return this.map {

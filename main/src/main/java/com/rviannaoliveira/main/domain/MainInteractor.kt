@@ -10,8 +10,9 @@ interface MainInteractor {
     fun getItems(): Single<List<Item>>
 }
 
-class MainInteractorImpl @Inject constructor(private val repository: MainRepository) :
-    MainInteractor {
+class MainInteractorImpl @Inject constructor(
+    private val repository: MainRepository) : MainInteractor {
+
     override fun getItems(): Single<List<Item>> =
         repository.getItems().map {
             it.toListItems()
