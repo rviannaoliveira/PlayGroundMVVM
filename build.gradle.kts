@@ -80,6 +80,10 @@ fun Project.configureAppAndroid() {
             applicationId = Config.applicationId
         }
 
+        testOptions {
+            animationsDisabled = true
+        }
+
         buildTypes {
             getByName("release") {
                 isMinifyEnabled = false
@@ -103,7 +107,6 @@ fun Project.configureAndroidLibrary() {
             }
         }
     }
-
 }
 
 

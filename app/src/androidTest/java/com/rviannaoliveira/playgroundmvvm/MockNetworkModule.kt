@@ -1,8 +1,12 @@
-package com.rviannaoliveira.networking.di
+package com.rviannaoliveira.playgroundmvvm
 
 import android.app.Application
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.rviannaoliveira.networking.BuildConfig
+import com.rviannaoliveira.networking.di.BaseUrl
+import com.rviannaoliveira.networking.di.IOScheduler
+import com.rviannaoliveira.networking.di.LoggingInterceptor
+import com.rviannaoliveira.networking.di.MainScheduler
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -14,6 +18,7 @@ import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
+import okhttp3.mockwebserver.MockWebServer
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -22,7 +27,33 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
-class NetworkModule {
+class MockNetworkModule {
+
+    @Provides
+    @Singleton
+    fun provideMockServer (): MockWebServer {
+        var mockWebServer:MockWebServer? = null
+        val thread = Thread(Runnable {
+            mockWebServer = MockWebServer()
+            mockWebServer!!.initMockServer()
+        })
+        thread.start()
+        thread.join()
+        return mockWebServer ?: throw NullPointerException()
+    }
+
+    @Provides
+    @Singleton
+    @BaseUrl
+    fun provideBaseUrl (mockWebServer:MockWebServer): String {
+        var url = ""
+        val t = Thread(Runnable {
+            url = mockWebServer.url("/").toString()
+        })
+        t.start()
+        t.join()
+        return url
+    }
 
     @Provides
     @Singleton
@@ -33,11 +64,6 @@ class NetworkModule {
     @Singleton
     @MainScheduler
     fun provideMainScheduler(): Scheduler = AndroidSchedulers.mainThread()
-
-    @Singleton
-    @Provides
-    @BaseUrl
-    fun provideBaseUrl(): String = BuildConfig.BASE_URL
 
     @Singleton
     @Provides
