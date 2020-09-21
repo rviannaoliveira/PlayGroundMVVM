@@ -6,7 +6,7 @@ import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers
-import com.rviannaoliveira.main.presentation.adapter.CharacterListViewHolder
+import com.rviannaoliveira.main.presentation.adapter.ItemListViewHolder
 import org.hamcrest.Matchers
 
 fun listItems(func: RobotMainTest.() -> Unit) = RobotMainTest().apply(func)
@@ -24,7 +24,7 @@ class RobotMainTest {
         SystemClock.sleep(1000)
         Espresso.onView(ViewMatchers.withId(R.id.recyclerView))
             .perform(
-                RecyclerViewActions.actionOnItemAtPosition<CharacterListViewHolder>(position,
+                RecyclerViewActions.actionOnItemAtPosition<ItemListViewHolder>(position,
                     ViewActions.click()
                 ))
         return this
