@@ -15,7 +15,7 @@ import java.lang.Exception
 class ItemListAdapter(
     list: List<Item> = emptyList(),
     private val onClicked: (String) -> (Unit)
-) : RecyclerView.Adapter<CharacterListViewHolder>() {
+) : RecyclerView.Adapter<ItemListViewHolder>() {
 
     var list: List<Item> = list
         set(value) {
@@ -25,10 +25,10 @@ class ItemListAdapter(
 
     var context: Context? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterListViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemListViewHolder {
         context = parent.context
 
-        return CharacterListViewHolder(
+        return ItemListViewHolder(
             CustomCardView(
                 parent.context
             ).apply {
@@ -52,7 +52,7 @@ class ItemListAdapter(
     override fun getItemCount(): Int =
         list.size
 
-    override fun onBindViewHolder(holder: CharacterListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemListViewHolder, position: Int) {
         val item = list[position]
 
         holder.card.title = item.pricingInfos.price.toString()
@@ -82,4 +82,4 @@ class ItemListAdapter(
     }
 }
 
-class CharacterListViewHolder(val card: CustomCardView) : RecyclerView.ViewHolder(card)
+class ItemListViewHolder(val card: CustomCardView) : RecyclerView.ViewHolder(card)

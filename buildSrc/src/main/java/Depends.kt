@@ -48,6 +48,7 @@ object Depends {
         const val uiautomator = "androidx.test.uiautomator:uiautomator:${Versions.test_uiautomator}"
         const val ext = "androidx.test.ext:junit:${Versions.test_ext}"
         const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.mockWebServer}"
+        const val intent = "androidx.test.espresso:espresso-intents:${Versions.test_espresso_version}"
     }
 
     object Support {
@@ -157,6 +158,7 @@ object Depends {
             AndroidTest.runner,
             AndroidTest.espressoContrib,
             AndroidTest.mockWebServer,
-            AndroidTest.ext
+            AndroidTest.ext,
+            AndroidTest.intent
     )
 }
