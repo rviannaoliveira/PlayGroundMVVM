@@ -51,7 +51,7 @@
  * Poderia ter feito mais coberturas e adicionado mais campos na tela, só que não considerei necessário, pois assim já consigo demonstrar meu conhecimento.
  * Podemos conversar sobre quaisquer pontos que tenham duvida
  * Não quis configurar a chave de release e nem o fabric, mas caso tenham duvida eu explico como faz para tirar qualquer duvida de implementação da minha parte.
- 
+ * Sobre a parte que estava escrito no desafio de diferenciar Viva real ou Zap, pra mim ficou um pouco confuso que pareceu ser mais o desafio de backend, e como também não vi nada no json eu acabei descondiderando. Todo caso eu tenho algumas abordagens que podemos discutir caso isso seja necessário também.
     
 License
 -------
