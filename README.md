@@ -31,8 +31,8 @@
 
 <a name="obs"/></a>
 ## OBS
- Poderia ter feito mais coberturas e adicionado mais campos na tela, só que não considerei necessário, pois assim já consigo demonstrar meu conhecimento.
- Podemos conversar sobre quaisquer pontos tenham duvida
+ * Poderia ter feito mais coberturas e adicionado mais campos na tela, só que não considerei necessário, pois assim já consigo demonstrar meu conhecimento.
+ * Podemos conversar sobre quaisquer pontos tenham duvida
 
 
 License
