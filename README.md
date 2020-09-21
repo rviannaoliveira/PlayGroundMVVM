@@ -2,7 +2,8 @@
 
 ## Table of Contents
 * [ScreenShots](#screenshots)
-* [Tools and Libs](#tools)
+* [Libs](#libs)
+* [Tools](#tools)
 * [OBS](#obs)
 
 <a name="screenshots"></a>
@@ -14,22 +15,38 @@
   <img src="screenshots/two.jpeg" align="center" width=200>
 </p>
 
-<a name="tools"></a>
-## Tools and Libs
+<a name="libs"></a>
+##  Libs
 * [Kotlin](https://kotlinlang.org/)✔︎
 * [Architecture Components - ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)✔︎
 * [Architecture Components - Databinding](https://developer.android.com/topic/libraries/data-binding)✔︎
 * [RxJava](https://github.com/ReactiveX/RxJava)✔︎
 * [Retrofit](http://square.github.io/retrofit/)✔︎
+* [ViewPager2](https://developer.android.com/jetpack/androidx/releases/viewpager2)✔︎
 * [Picasso](http://square.github.io/picasso/)✔︎
 * [AndroidX Support Libs ](https://developer.android.com/jetpack/androidx) ✔︎
 * [Dagger](https://github.com/google/dagger)✔︎
 * [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)✔︎
 * [Instrumented Test - Espresso](https://developer.android.com/training/testing/espresso/index.html)✔︎
 * [UnitTest - Mockk](https://github.com/mockk/mockk)✔︎
+* [Pipeline - Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows)✔︎
+
+<a name="libs"></a>
+##  Tools
+
+* [Modularization]
+* [Pipeline]
+* [UnitTest]
+* [Instrumented Test]
+* [Instrumented Test]
+* [List]
+* [Detail]
+* [Splash]
+* [Call Google Maps]
 
 <a name="obs"/></a>
 ## OBS
+
  * Poderia ter feito mais coberturas e adicionado mais campos na tela, só que não considerei necessário, pois assim já consigo demonstrar meu conhecimento.
  * Podemos conversar sobre quaisquer pontos tenham duvida
 
