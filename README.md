@@ -31,7 +31,8 @@
 
 <a name="obs"/></a>
 ## OBS
-* Eu fiz algumas situações não é grande quantidade, mas o suficiente para vcs terem ideia do que posso ter conhecimento. Se tiver algum ponto podemos discutir sobr.
+ Poderia ter feito mais coberturas e adicionado mais campos na tela, só que não considerei necessário, pois assim já consigo demonstrar meu conhecimento.
+ Podemos conversar sobre quaisquer pontos tenham duvida
 
 
 License
