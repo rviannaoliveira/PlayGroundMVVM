@@ -1,5 +1,6 @@
 # PlayGroundMVVM
-
+  
+ 
 ## Table of Contents
 * [ScreenShots](#screenshots)
 * [Libs](#libs)
@@ -49,8 +50,9 @@
  a se compartar com aparelho como XIAOMI
  * Poderia ter feito mais coberturas e adicionado mais campos na tela, só que não considerei necessário, pois assim já consigo demonstrar meu conhecimento.
  * Podemos conversar sobre quaisquer pontos que tenham duvida
-
-
+ * Não quis configurar a chave de release e nem o fabric, mas caso tenham duvida eu explico como faz para tirar qualquer duvida de implementação da minha parte.
+ 
+    
 License
 -------
 
