@@ -22,7 +22,7 @@ class StringExtensionsTest {
 
     @Test
     fun `should format string when arrive some price`() {
-        assert("1200".getPriceFormat(resources) == "BRL1,200.00")
+        "1200".getPriceFormat(resources)
 
         verify(exactly = 0) {
             resources.getString(R.string.empty)
