@@ -1,4 +1,4 @@
-package com.rviannaoliveira.main.data.model
+package com.rviannaoliveira.networking.data.model
 
 data class ItemResponse (
 	val usableAreas : Int,

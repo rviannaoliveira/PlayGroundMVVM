@@ -1,7 +1,7 @@
 package com.rviannaoliveira.main
 
 import com.rviannaoliveira.detail.domain.DetailItem
-import com.rviannaoliveira.main.data.model.*
+import com.rviannaoliveira.networking.data.model.*
 import com.rviannaoliveira.networking.domain.mapper.toListItems
 import com.rviannaoliveira.networking.domain.model.*
 

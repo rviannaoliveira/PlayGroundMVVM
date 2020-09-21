@@ -1,11 +1,8 @@
 package com.rviannaoliveira.main
 
 import com.rviannaoliveira.cache.ICache
-import com.rviannaoliveira.detail.data.DetailRepository
-import com.rviannaoliveira.detail.data.DetailRepositoryImpl
 import com.rviannaoliveira.main.data.MainRepository
 import com.rviannaoliveira.main.data.MainRepositoryImpl
-import com.rviannaoliveira.main.data.model.ItemResponse
 import com.rviannaoliveira.main.data.service.MainService
 import com.rviannaoliveira.networking.domain.model.Item
 import io.mockk.MockKAnnotations

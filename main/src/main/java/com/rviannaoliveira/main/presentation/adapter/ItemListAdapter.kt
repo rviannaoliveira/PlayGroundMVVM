@@ -23,7 +23,7 @@ class ItemListAdapter(
             notifyDataSetChanged()
         }
 
-    var context: Context? = null
+    private var context: Context? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemListViewHolder {
         context = parent.context
