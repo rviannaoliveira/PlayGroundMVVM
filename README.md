@@ -23,11 +23,10 @@
 * [Retrofit](http://square.github.io/retrofit/)✔︎
 * [Picasso](http://square.github.io/picasso/)✔︎
 * [AndroidX Support Libs ](https://developer.android.com/jetpack/androidx) ✔︎
-* [Espresso](https://developer.android.com/training/testing/espresso/index.html)✔︎
-* [jUnit](http://junit.org/junit4/)✔︎
-* [Mockk](https://github.com/mockk/mockk)✔︎
 * [Dagger](https://github.com/google/dagger)✔︎
 * [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)✔︎
+* [Instrumented Test - Espresso](https://developer.android.com/training/testing/espresso/index.html)✔︎
+* [UnitTest - Mockk](https://github.com/mockk/mockk)✔︎
 
 <a name="obs"/></a>
 ## OBS
