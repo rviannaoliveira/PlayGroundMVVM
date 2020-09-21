@@ -1,6 +1,6 @@
 package com.rviannaoliveira.networking.domain.mapper
 
-import com.rviannaoliveira.main.data.model.*
+import com.rviannaoliveira.networking.data.model.*
 import com.rviannaoliveira.networking.domain.model.*
 
 fun List<ItemResponse>.toListItems(): List<Item> {

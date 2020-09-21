@@ -38,7 +38,7 @@ abstract class DetailModule {
         @JvmStatic
         @ID
         @Provides
-        fun providesQuoteName(activity: DetailActivity): String =
+        fun providesId(activity: DetailActivity): String =
             activity.requireString(DetailActivity.ID)
     }
 }

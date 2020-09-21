@@ -1,7 +1,7 @@
 package com.rviannaoliveira.main.data
 
 import com.rviannaoliveira.cache.ICache
-import com.rviannaoliveira.main.data.model.ItemResponse
+import com.rviannaoliveira.networking.data.model.ItemResponse
 import com.rviannaoliveira.main.data.service.MainService
 import com.rviannaoliveira.networking.domain.model.Item
 import io.reactivex.Single

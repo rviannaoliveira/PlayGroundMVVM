@@ -1,5 +1,6 @@
 # PlayGroundMVVM
-
+  
+ 
 ## Table of Contents
 * [ScreenShots](#screenshots)
 * [Libs](#libs)
@@ -45,11 +46,12 @@
 
 <a name="obs"/></a>
 ## OBS
-
+ * Como apenas eu tenho um Samsung, todo o desenvolvimento foi feito pelo emulador ( alguns modelos ) + o meu próprio, não sabendo como irá
+ se compartar com aparelho como XIAOMI
  * Poderia ter feito mais coberturas e adicionado mais campos na tela, só que não considerei necessário, pois assim já consigo demonstrar meu conhecimento.
  * Podemos conversar sobre quaisquer pontos que tenham duvida
-
-
+ * Sobre a parte que estava escrito no desafio de diferenciar Viva real ou Zap, pra mim ficou um pouco confuso que pareceu ser mais o desafio de backend, e como também não vi nada no json eu acabei descondiderando. Todo caso eu tenho algumas abordagens que podemos discutir caso isso seja necessário também.
+    
 License
 -------
 

@@ -1,6 +1,6 @@
 package com.rviannaoliveira.main.data.service
 
-import com.rviannaoliveira.main.data.model.ItemResponse
+import com.rviannaoliveira.networking.data.model.ItemResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 
