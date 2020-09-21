@@ -38,7 +38,6 @@
 * [Pipeline]
 * [UnitTest]
 * [Instrumented Test]
-* [Instrumented Test]
 * [List]
 * [Detail]
 * [Splash]
